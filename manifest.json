@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "LOG",
+  "description": "Lichens Overthrowing Google (LOG) is an extension that replaces all instances/variations of the word 'like' with 'lichen'. This creation of this extension is for academic purposes.",
+  "version": "1.0",
+  "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+              "overthrow.js"
+            ]
+            // "run_at": "document_end"
+        }
+  ],
+  "browser_action": {
+    "default_icon": "lichen.png",
+    "default_title": "LOG Enabled"
+  },  
+  "permissions": [
+    "tabs",
+    "storage",
+    "history",
+    "contentSettings",
+    "management",
+    "privacy",
+    "<all_urls>"
+  ]
+}
