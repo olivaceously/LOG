@@ -17,3 +17,5 @@ I followed and combined a number of tutorials to help write this extension:
 [Basic Google Chrome Extension Tutorial](https://robots.thoughtbot.com/how-to-make-a-chrome-extension)
 
 [Random Number Generator](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+
+[Code For Cookie Deletion](https://developer.chrome.com/extensions/samples)
