@@ -1,47 +1,54 @@
-<!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
-  <head>
-    <title>LOG Control Center</title>
-    <style type="text/css">
-      body {
-        margin: 10px;
-        white-space: nowrap;
-        background-color: #CED5A3;
-      }
+<head>
+  <title>Disable LOG</title>
+<style>
+body {
+  background-color: #CED5A3;
+  margin: 90px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
-      h1 {
-        font-size: 15px;
-      }
+img {
+  width: 300px;
+  height: 200px;
+  margin: 25px;
+}
 
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-around;
-      }
-      
-    </style>
+button {
+  margin: 25px;
+  padding: 25px;
+}
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
-    <script type="text/javascript" src="control_center.js"></script>
-  </head>
+.container {
+  display: none;
+}
 
-  <body>
-    <h1>LOG Control Center</h1>
-    <div id="container">
-      <select id="dropdown">
-        <option selected value="on">ON</option>
-        <option value="off">OFF</option>
-      </select>
+</style>
+<script src="wipe_cookies.js"></script>
+</head>
+<body>
+  <h2>We are sorry to see you go!</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flavoparmelia_caperata_-_lichen_-_Caperatflechte.jpg/1200px-Flavoparmelia_caperata_-_lichen_-_Caperatflechte.jpg">
+  <button id="remove_button">Disable LOG</button>
+  <div class="container">
+    <div id="filter_div">
+      Filter: <input id="filter" type="text">
+      <button>x</button>
     </div>
+    <br />
+    <div id="summary_div">
+      Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains.
+      <span id="delete_all_button"></span>
+    </div>
+    <br />
+    <table id="cookies">
+      <tr class="header">
+        <th>Name</th>
+        <th># of Cookies</th>
+      </tr>
+    </table>
+  </div>
   </body>
 </html>
